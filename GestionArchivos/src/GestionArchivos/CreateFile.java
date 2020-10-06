@@ -13,7 +13,6 @@ public class CreateFile {
         fichero = null;
 
     }
-
      protected CreateFile(String nruta,String nfichero) {
 
 
