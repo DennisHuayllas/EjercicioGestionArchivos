@@ -15,7 +15,7 @@ public class CreateFile {
     }
      protected CreateFile(String nruta,String nfichero) {
 
-
+    	 
         fichero = new File (nruta,nfichero);
 
          try {
