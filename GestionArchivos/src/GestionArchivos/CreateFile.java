@@ -20,7 +20,8 @@ public class CreateFile {
 
          try {
 
-              if (fichero.createNewFile())
+        
+              if (!fichero.exists() && fichero.createNewFile() )
                 System.out.println("El fichero se ha creado correctamente");
               else
                 System.out.println("No ha podido ser creado el fichero");

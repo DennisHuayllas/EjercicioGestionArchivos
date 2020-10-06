@@ -17,10 +17,10 @@ public class DeleteFile {
 
             fichero = new File (nruta,nfichero);
 
-             if (fichero.delete())
-                System.out.println("El fichero se ha creado correctamente");
+             if ( fichero.exists() && fichero.delete())
+                System.out.println("El fichero se ha borrado correctamente");
               else
-                System.out.println("No ha podido ser creado el fichero");
+                System.out.println("No ha podido ser borrar el fichero");
 
         }
 

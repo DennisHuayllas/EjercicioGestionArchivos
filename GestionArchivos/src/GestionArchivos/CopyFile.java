@@ -16,20 +16,14 @@ import java.util.Scanner;
 public class CopyFile {
 	
 	String ficheroacopiar;
-	public CopyFile(String rutafichero ,String nombrefichero) throws UnsupportedEncodingException {
+	protected CopyFile(String rutafichero ,String nombrefichero) throws UnsupportedEncodingException {
 		
 		CrearFichero(rutafichero,nombrefichero);
 		ficheroacopiar=nombrefichero;
 		
 	}
 	
-	public void LeerFichero(String ficheroectura) {
-		
-	
-
-		
-	}
-	public void CrearFichero(String rutafichero,String nombrefichero) throws UnsupportedEncodingException {
+	protected void CrearFichero(String rutafichero,String nombrefichero) throws UnsupportedEncodingException {
 		
 		String cadena=null;
 		FileReader f=null;
@@ -44,7 +38,7 @@ public class CopyFile {
 		
 		try {
 			  // A partir del objeto File creamos el fichero físicamente
-			  if (fichero.createNewFile())
+			  if (!fichero.exists() &&fichero.createNewFile())
 			    System.out.println("Fichero copiado correctamente ");
 			  else
 			    System.out.println("No ha podido ser creado el fichero");
@@ -73,8 +67,7 @@ public class CopyFile {
 				try {
 					for(int i=0;i<texto.size();i++) {
 							
-						out.write(texto.get(i)+"\n");
-						
+						out.write(texto.get(i)+"\n");			
 					}
 				
 					
@@ -93,28 +86,7 @@ public class CopyFile {
 		}
 
 		
-	
-
-
   }
-		
-		
-		
-		
-
-	
-	public static void main(String args[]) throws UnsupportedEncodingException {
-		
-		Scanner teclado=new Scanner(System.in);
-		System.out.println("introduzca el nombre del fichero que desea copiar");
-		String nombre=teclado.nextLine();
-		System.out.println("introduzca la ruta donde desea copiarlor");
-		String ruta =teclado.nextLine();
-		
-		
-		CopyFile archivocopiado= new CopyFile(ruta,nombre);
-		
-	}
-	
+				
 
 }

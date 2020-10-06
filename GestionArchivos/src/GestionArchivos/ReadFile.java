@@ -9,7 +9,7 @@ import java.io.IOException;
 public class ReadFile {
 	
 	
-	public ReadFile(String fichero) throws FileNotFoundException {
+	protected ReadFile(String fichero) throws FileNotFoundException {
 		
 		String cadena=null;
 		FileReader ficherolectura= new FileReader(fichero);
